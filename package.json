@@ -1,0 +1,22 @@
+{
+  "name": "wpfoundation",
+  "version": "0.0.1",
+  "description": "A starter theme for wordpress sites using underscores, zurb foundation, and gulpjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lancebutler2/wpfoundation.git"
+  },
+  "author": "Lance Butler II",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lancebutler2/wpfoundation/issues"
+  },
+  "homepage": "https://github.com/lancebutler2/wpfoundation",
+  "devDependencies": {
+    "gulp": "^3.5.6"
+  }
+}
