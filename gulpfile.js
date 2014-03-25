@@ -3,7 +3,7 @@ var sass = require('gulp-sass');
 
 gulp.task('sass', function() {
     gulp.src('scss/app.scss')
-        .pipe(sass({includePaths: ['scss']}))
+        .pipe(sass({includePaths: ['bower_components/foundation/scss', 'scss']}))
         .pipe(gulp.dest('stylesheets'));
 });
 
