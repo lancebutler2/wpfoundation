@@ -5,6 +5,7 @@
  * @package wpfoundation
  */
 
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -21,6 +22,10 @@ if ( ! function_exists( 'wpfoundation_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function wpfoundation_setup() {
+    /*
+     * Go ahead and remove Wordpress Generator Tag in HEAD
+     */
+    remove_action( 'wp_head', 'wp_generator' );
 
 	/*
 	 * Make theme available for translation.
@@ -84,7 +89,7 @@ add_action( 'widgets_init', 'wpfoundation_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wpfoundation_scripts() {
-	wp_enqueue_style( 'wpfoundation-style', get_stylesheet_uri() );
+	//wp_enqueue_style( 'wpfoundation-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'wpfoundation-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
