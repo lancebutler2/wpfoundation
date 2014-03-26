@@ -93,7 +93,7 @@ function wpfoundation_scripts() {
      * Remove the default _s stylesheet...in favor of the default zurb foundation stylesheet
      */
 	//wp_enqueue_style( 'wpfoundation-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'wpfoundation-app-style', get_stylesheet_directory_uri() . '/stylesheets/app.css', array(), '1.0.4', 'all' );
+    wp_enqueue_style( 'wpfoundation-app-style', get_stylesheet_directory_uri() . '/stylesheets/app.min.css', array(), '1.0.4', 'all' );
 
 	wp_enqueue_script( 'wpfoundation-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
