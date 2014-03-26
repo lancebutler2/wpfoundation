@@ -1,12 +1,14 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 
-gulp.task('sass', function() {
+gulp.task('styles', function() {
     gulp.src('scss/app.scss')
-        .pipe(sass({includePaths: ['bower_components/foundation/scss', 'scss']}))
+        .pipe(sass({loadPath: ['bower_components/foundation/scss'], quiet: true, trace: true, style: 'nested'}))
         .pipe(gulp.dest('stylesheets'));
 });
 
-gulp.task('default', ['sass'], function() {
-    gulp.watch("scss/*.scss", ['sass']);
+gulp.task('watch', function() {
+    gulp.watch(['scss/*.scss', 'gulpfile.js'], ['styles']);
 });
+
+gulp.task('default', ['watch']);
