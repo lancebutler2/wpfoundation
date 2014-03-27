@@ -18,7 +18,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('foundation', function() {
-    gulp.src(['./bower_components/foundation/js/vendor/fastclick.js', './bower_components/foundation/js/vendor/placeholder.js', './bower_components/foundation/js/vendor/jquery.cookie.js', './bower_components/foundation/js/vendor/modernizr.js', './bower_components/foundation/js/foundation/foundation.js', './bower_components/foundation/js/foundation/foundation.*.js'])
+    gulp.src(['./bower_components/foundation/js/vendor/modernizr.js', './bower_components/foundation/js/vendor/fastclick.js', './bower_components/foundation/js/vendor/placeholder.js', './bower_components/foundation/js/vendor/jquery.cookie.js', './bower_components/foundation/js/foundation/foundation.js', './bower_components/foundation/js/foundation/foundation.*.js'])
         .pipe(changed('./js/'))
         .pipe(concat('foundation.all.js'))
         .pipe(gulp.dest('./js/'))
