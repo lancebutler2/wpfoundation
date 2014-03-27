@@ -107,6 +107,33 @@ function wpfoundation_scripts() {
      * Add ALL Foundation JS scripts as a minified version. This includes Fastclick.js & Modernizr.js
      */
     wp_enqueue_script( 'wpfoundation-foundation-all-js', get_template_directory_uri() . '/js/foundation.all.min.js', array('jquery'), '1.0.4', true );
+
+    /*
+     * Alternatively Load Foundation Scripts Individually
+     */
+    //FOUNDATION VENDOR SCRIPTS
+    #wp_enqueue_script( 'wpfoundation-foundation-fastclick-js', get_template_directory_uri() . '/bower_components/foundation/js/vendor/fastclick.js', array( 'jquery' ), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-modernizr-js', get_template_directory_uri() . '/bower_components/foundation/js/vendor/modernizr.js', array( 'jquery' ), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-placeholder-js', get_template_directory_uri() . '/bower_components/foundation/js/vendor/placeholder.js', array( 'jquery' ), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-jquery-cookie-js', get_template_directory_uri() . '/bower_components/foundation/js/vendor/jquery.cookie.js', array( 'jquery' ), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-min', get_template_directory_uri() . '/bower_components/foundation/js/foundation.min.js', array( 'jquery', 'wpfoundation-foundation-fastclick-js', 'wpfoundation-foundation-modernizr-js' ), '1.0.4', true );
+    //FOUNDATION PLUGIN SCRIPTS
+    #wp_enqueue_script( 'wpfoundation-foundation-interchange-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.interchange.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-slider-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.slider.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-tab-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.tab.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-accordion-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.accordion.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-dropdown-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.dropdown.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-joyride-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.joyride.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-equalizer-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.equalizer.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-abide-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.abide.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-topbar-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.topbar.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-clearing-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.clearing.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-tooltip-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.tooltip.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-offcanvas-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.offcanvas.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-magellan-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.magellan.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-reveal-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.reveal.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-orbit-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.orbit.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
+    #wp_enqueue_script( 'wpfoundation-foundation-alert-js', get_template_directory_uri() . '/bower_components/foundation/js/foundation/foundation.alert.js', array( 'jquery', 'wpfoundation-foundation-min'), '1.0.4', true );
 }
 add_action( 'wp_enqueue_scripts', 'wpfoundation_scripts' );
 
