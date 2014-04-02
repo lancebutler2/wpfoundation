@@ -27,8 +27,6 @@ gulp.task('foundation', function() {
         .pipe(gulp.dest('./js/'))
 });
 
-gulp.task('watch', function() {
+gulp.task('default', ['styles', 'foundation'], function() {
     gulp.watch(['./scss/*.scss', './gulpfile.js'], ['styles']);
 });
-
-gulp.task('default', ['watch']);
