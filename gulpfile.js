@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    imagemin= require('gulp-imagemin');
+    imagemin = require('gulp-imagemin'),
+    notify = require('gulp-notify');
 
 gulp.task('imagemin', function() {
     //var imgSrc = ['./dev/images/*', './dev/images/**/*'],
@@ -16,7 +17,8 @@ gulp.task('imagemin', function() {
     gulp.src(imgSrc)
         .pipe(changed(imgDst))
         .pipe(imagemin())
-        .pipe(gulp.dest(imgDst));
+        .pipe(gulp.dest(imgDst))
+        .pipe(notify('Image Min: it\s no problem'));
 });
 
 gulp.task('styles', function() {
@@ -27,6 +29,7 @@ gulp.task('styles', function() {
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest('stylesheets'))
+        .pipe(notify('Styles: it\'s no problem'));
 });
 
 gulp.task('foundation', function() {
@@ -37,6 +40,7 @@ gulp.task('foundation', function() {
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest('./js/'))
+        .pipe(notify('Foundation Scripts: it\s no problem'));
 });
 
 gulp.task('default', ['imagemin', 'styles', 'foundation'], function() {
