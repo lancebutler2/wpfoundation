@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     imagemin= require('gulp-imagemin');
 
 gulp.task('imagemin', function() {
+    //var imgSrc = ['./dev/images/*', './dev/images/**/*'],
     var imgSrc = './dev/images/**/*',
         imgDst = './images';
 
@@ -40,8 +41,9 @@ gulp.task('foundation', function() {
 
 gulp.task('default', ['imagemin', 'styles', 'foundation'], function() {
     //watch for new images to imagemin
+    //gulp.watch(['./dev/images/*','./dev/images/**/*'], ['imagemin']);
     gulp.watch('./dev/images/**/*', ['imagemin']);
 
     //watch for scss changes to styles
-    gulp.watch(['./scss/*.scss', './gulpfile.js'], ['styles']);
+    gulp.watch('./scss/*.scss', ['styles']);
 });
