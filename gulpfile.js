@@ -5,7 +5,18 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     changed = require('gulp-changed'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    imagemin= require('gulp-imagemin');
+
+gulp.task('imagemin', function() {
+    var imgSrc = './dev/images/**/*',
+        imgDst = './images';
+
+    gulp.src(imgSrc)
+        .pipe(changed(imgDst))
+        .pipe(imagemin())
+        .pipe(gulp.dest(imgDst));
+});
 
 gulp.task('styles', function() {
     gulp.src('./scss/app.scss')
@@ -27,6 +38,10 @@ gulp.task('foundation', function() {
         .pipe(gulp.dest('./js/'))
 });
 
-gulp.task('default', ['styles', 'foundation'], function() {
+gulp.task('default', ['imagemin', 'styles', 'foundation'], function() {
+    //watch for new images to imagemin
+    gulp.watch('./dev/images/**/*', ['imagemin']);
+
+    //watch for scss changes to styles
     gulp.watch(['./scss/*.scss', './gulpfile.js'], ['styles']);
 });
