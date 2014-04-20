@@ -3573,12 +3573,10 @@ kbd {
 @keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
     transform: rotate(0deg); }
 
   to {
     -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
     transform: rotate(360deg); } }
 /* Orbit Graceful Loading */
 .slideshow-wrapper {
@@ -3648,21 +3646,18 @@ kbd {
     .orbit-container .orbit-slides-container.fade > * {
       -webkit-transform: translate3d(0, 0, 0);
       opacity: 0.01;
-      -webkit-transition: opacity .25s ease-in-out;
       transition: opacity .25s ease-in-out;
       -moz-transition: opacity .25s ease-in-out;
       -webkit-transition: opacity .25s ease-in-out; }
       .orbit-container .orbit-slides-container.fade > *.animate-in {
         opacity: 1;
         z-index: 20;
-        -webkit-transition: opacity 500ms ease-in-out;
         transition: opacity 500ms ease-in-out;
         -moz-transition: opacity 500ms ease-in-out;
         -webkit-transition: opacity 500ms ease-in-out; }
       .orbit-container .orbit-slides-container.fade > *.animate-out {
         opacity: 0.01;
         z-index: 10;
-        -webkit-transition: opacity 500ms ease-in-out;
         transition: opacity 500ms ease-in-out;
         -moz-transition: opacity 500ms ease-in-out;
         -webkit-transition: opacity 500ms ease-in-out; }
@@ -5606,7 +5601,6 @@ blockquote p {
     color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     -webkit-box-shadow: none !important;
-    /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important; }
 
