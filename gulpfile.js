@@ -1,13 +1,14 @@
-var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    rename = require('gulp-rename'),
-    changed = require('gulp-changed'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    notify = require('gulp-notify');
+var gulp            = require('gulp'),
+    sass            = require('gulp-ruby-sass'),
+    autoprefixer    = require('gulp-autoprefixer'),
+    minifycss       = require('gulp-minify-css'),
+    rename          = require('gulp-rename'),
+    changed         = require('gulp-changed'),
+    concat          = require('gulp-concat'),
+    uglify          = require('gulp-uglify'),
+    imagemin        = require('gulp-imagemin'),
+    notify          = require('gulp-notify'),
+    livereload      = require('gulp-livereload');
 
 gulp.task('imagemin', function() {
     var imgSrc = 'dev/images/**/*',
@@ -48,4 +49,8 @@ gulp.task('default', ['imagemin', 'styles', 'foundation'], function() {
 
     //watch for scss changes to styles
     gulp.watch('scss/*.scss', ['styles']);
+    //
+    //watch for any changes to views
+    livereload.listen();
+    gulp.watch('*').on('change', livereload.changed);
 });
